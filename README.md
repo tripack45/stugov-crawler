@@ -62,7 +62,8 @@ The crawler writes JSON to stdout. Progress and errors are logged to stderr.
   "https://www.cmu.edu/stugov/gsa/": [
     {"url": "https://www.cmu.edu/stugov/gsa/about/", "text": "About Us"},
     {"url": "https://www.cmu.edu/stugov/gsa/events/", "text": "Events"},
-    {"url": "https://www.cmu.edu/index.html"}
+    {"url": "https://www.cmu.edu/index.html"},
+    {"url": "mailto:gsa@cmu.edu", "text": "Contact Us"}
   ],
   "https://www.cmu.edu/stugov/gsa/about/": [
     {"url": "https://www.cmu.edu/stugov/gsa/", "text": "Home"},
@@ -72,6 +73,6 @@ The crawler writes JSON to stdout. Progress and errors are logged to stderr.
 ```
 
 Each key is a crawled page URL. Its value is a list of link objects found on that
-page (both internal and external). Each link object has a `"url"` field and an
-optional `"text"` field containing the visible link text (omitted when the link
-has no text content).
+page (both internal, external, and `mailto:` links). Each link object has a
+`"url"` field and an optional `"text"` field containing the visible link text
+(omitted when the link has no text content).

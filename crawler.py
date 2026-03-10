@@ -57,7 +57,7 @@ def crawl(max_depth: int | None = None):
 
         for tag in soup.find_all("a", href=True):
             href = normalize(urljoin(url, tag["href"]))
-            if not href or href.startswith(("mailto:", "tel:", "javascript:")):
+            if not href or href.startswith(("tel:", "javascript:")):
                 continue
             link_entry: dict[str, str] = {"url": href}
             text = tag.get_text(strip=True)
